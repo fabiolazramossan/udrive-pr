@@ -88,12 +88,12 @@ export function Navbar() {
               </button>
 
               {/* Reserve CTA */}
-              <Link
-                href="#reserve"
+              <button
+                onClick={() => window.dispatchEvent(new Event("open-booking"))}
                 className="hidden md:inline-flex btn-primary !py-2 !px-5 !text-sm"
               >
                 {locale === "en" ? "Reserve" : "Reservar"}
-              </Link>
+              </button>
 
               {/* Mobile menu toggle */}
               <button
@@ -167,13 +167,13 @@ export function Navbar() {
                   {locale === "en" ? "Español" : "English"}
                 </button>
 
-                <Link
-                  href="#reserve"
+                <button
+                  onClick={() => window.dispatchEvent(new Event("open-booking"))}
                   onClick={() => setMobileOpen(false)}
                   className="btn-primary w-full"
                 >
                   {locale === "en" ? "Reserve Now" : "Reservar Ahora"}
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>

@@ -106,7 +106,7 @@ export function FleetCard({ vehicle }: { vehicle: Vehicle }) {
                   <span className="text-base font-medium text-muted ml-1">/ day</span>
                 </p>
               </div>
-              <Link href="#reserve" className="btn-primary group/btn !text-sm">
+              <Link href="#" onClick={() => window.dispatchEvent(new Event("open-booking"))} className="btn-primary group/btn !text-sm">
                 Reserve
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
               </Link>

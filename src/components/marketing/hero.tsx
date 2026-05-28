@@ -68,7 +68,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
             className="flex flex-wrap gap-4 mb-20"
           >
-            <Link href="#reserve" className="btn-primary group">
+            <Link href="#" onClick={() => window.dispatchEvent(new Event("open-booking"))} className="btn-primary group">
               Reserve Now
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>

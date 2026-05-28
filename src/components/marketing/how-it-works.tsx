@@ -128,7 +128,7 @@ export function HowItWorks() {
         className="text-center mt-16"
       >
         <p className="text-sm text-muted mb-6">Ready to drive different?</p>
-        <a href="#reserve" className="btn-primary inline-flex">
+        <a href="#" onClick={() => window.dispatchEvent(new Event("open-booking"))} className="btn-primary inline-flex">
           Reserve in 60 seconds
         </a>
       </motion.div>
