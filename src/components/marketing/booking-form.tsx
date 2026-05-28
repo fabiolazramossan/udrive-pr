@@ -31,7 +31,7 @@ export default function BookingForm({ onClose }: { onClose?: () => void }) {
     setLoading(true); setError("");
     try {
       const { error: e } = await supabase.from("bookings").insert({
-        vehicle_id: 1, ...form, total_amount: total, status: "pending", notes: form.notes || null
+        vehicle_id: "da5dc68e-daff-453e-9f4c-12adf294922e", ...form, total_amount: total, status: "pending", notes: form.notes || null
       });
       if (e) throw e;
       setSuccess(true);
