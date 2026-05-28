@@ -53,7 +53,7 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <Image
-                src="/udrive-logo-full.png"
+                src="/udrive-logo-full.png" 
                 alt="Ü Drive PR"
                 width={300}
                 height={180}

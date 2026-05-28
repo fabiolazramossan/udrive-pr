@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Plane, FileSignature } from "lucide-react";
+import { HowItWorks } from "@/components/marketing/how-it-works";
+import { Fleet } from "@/components/marketing/fleet";
 
 export default function Home() {
   return (
@@ -151,25 +153,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== PLACEHOLDER NEXT SECTION ==================== */}
+      {/* ============ HOW IT WORKS ============ */}
+      <HowItWorks />
 
-      <section
-        id="fleet"
-        className="relative z-10 container-px mx-auto max-w-7xl py-32 border-t border-white/[0.06]"
-      >
-        <div className="text-center">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-lime font-semibold mb-4">
-            Coming Next
-          </p>
-          <h2 className="text-3xl md:text-5xl font-black mb-4">
-            Fleet showcase, How It Works, and more.
-          </h2>
-          <p className="text-muted max-w-xl mx-auto">
-            We&apos;re building the next sections. Keep scrolling Fabiola — soon
-            you&apos;ll see your cars here.
-          </p>
-        </div>
-      </section>
+      {/* ============ FLEET ============ */}
+      <Fleet />
     </main>
   );
 }
