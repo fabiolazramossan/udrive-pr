@@ -129,7 +129,7 @@ export function Navbar() {
                   className="h-10 w-auto object-contain"
                 />
                 <button
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { setMobileOpen(false); window.dispatchEvent(new Event("open-booking")); }}
                   className="p-2 text-white"
                   aria-label="Close menu"
                 >
@@ -168,7 +168,6 @@ export function Navbar() {
                 </button>
 
                 <button
-                  onClick={() => window.dispatchEvent(new Event("open-booking"))}
                   onClick={() => setMobileOpen(false)}
                   className="btn-primary w-full"
                 >
