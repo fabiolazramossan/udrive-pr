@@ -34,22 +34,19 @@ export default function BookingForm({ onClose }: { onClose?: () => void }) {
         vehicle_id: "da5dc68e-daff-453e-9f4c-12adf294922e", ...form, total_amount: total, status: "pending", notes: form.notes || null
         }).select("*");
       if (e) throw e;
-      if (insertData?.[0]) {
-        const b = insertData[0];
-        await fetch('/api/send-confirmation', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            customerName: b.customer_name,
-            customerEmail: b.customer_email,
-            bookingId: b.id,
-            clientToken: b.client_token,
-            startDate: b.start_date,
-            endDate: b.end_date,
-            deliveryLocation: b.delivery_location,
-          }),
-        });
-      }
+      await fetch("/api/send-confirmation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: form.customer_name,
+          customerEmail: form.customer_email,
+          bookingId: insertData?.[0]?.id || "pending",
+          clientToken: insertData?.[0]?.client_token || "",
+          startDate: form.start_date,
+          endDate: form.end_date,
+          deliveryLocation: form.delivery_location,
+        }),
+      });
       setSuccess(true);
     } catch(e: any) { setError(e.message || "Something went wrong."); }
     finally { setLoading(false); }
