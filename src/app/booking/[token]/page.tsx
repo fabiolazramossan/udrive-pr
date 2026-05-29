@@ -157,7 +157,7 @@ export default function BookingPortal() {
           <p className="text-[var(--color-foreground-muted)] text-sm mb-1">¿Necesitas ayuda?</p>
           <a href="/support" className="text-[var(--color-lime)] text-sm hover:underline">Centro de soporte</a>
           <span className="text-[var(--color-foreground-muted)] text-sm mx-2">o</span>
-          <a href="https://wa.me/17872345678" target="_blank" rel="noopener noreferrer" className="text-[var(--color-lime)] text-sm hover:underline">WhatsApp</a>
+          <a href="https://wa.me/17873197746" target="_blank" rel="noopener noreferrer" className="text-[var(--color-lime)] text-sm hover:underline">WhatsApp</a>
         </div>
       </div>
     </div>

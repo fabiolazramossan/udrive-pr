@@ -34,7 +34,7 @@ export default function SupportPage() {
         <p className="text-[var(--color-foreground-muted)] text-lg max-w-xl mx-auto">
           Estamos aquí para que tu experiencia sea perfecta.
         </p>
-        <a href="https://wa.me/17872345678" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 mt-8 px-8 py-3">
+        <a href="https://wa.me/17873197746" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 mt-8 px-8 py-3">
           Escríbenos por WhatsApp
         </a>
       </section>
