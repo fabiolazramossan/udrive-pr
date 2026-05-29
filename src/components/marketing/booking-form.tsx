@@ -30,10 +30,26 @@ export default function BookingForm({ onClose }: { onClose?: () => void }) {
   async function handleSubmit() {
     setLoading(true); setError("");
     try {
-      const { error: e } = await supabase.from("bookings").insert({
+      const { error: e, data: insertData } = await supabase.from("bookings").insert({
         vehicle_id: "da5dc68e-daff-453e-9f4c-12adf294922e", ...form, total_amount: total, status: "pending", notes: form.notes || null
-      });
+        }).select("*");
       if (e) throw e;
+      if (insertData?.[0]) {
+        const b = insertData[0];
+        await fetch('/api/send-confirmation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customerName: b.customer_name,
+            customerEmail: b.customer_email,
+            bookingId: b.id,
+            clientToken: b.client_token,
+            startDate: b.start_date,
+            endDate: b.end_date,
+            deliveryLocation: b.delivery_location,
+          }),
+        });
+      }
       setSuccess(true);
     } catch(e: any) { setError(e.message || "Something went wrong."); }
     finally { setLoading(false); }
