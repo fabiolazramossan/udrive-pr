@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { label: { en: "Support", es: "Soporte" }, href: "/support" },
 ];
 
-export function Navbar() {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [locale, setLocale] = useState<"en" | "es">("en");
