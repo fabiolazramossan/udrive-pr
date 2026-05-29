@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: { en: "How It Works", es: "Cómo Funciona" }, href: "#how-it-works" },
   { label: { en: "Delivery", es: "Entrega" }, href: "#delivery" },
   { label: { en: "Contact", es: "Contacto" }, href: "#contact" },
+  { label: { en: "Support", es: "Soporte" }, href: "/support" },
 ];
 
 export function Navbar() {
